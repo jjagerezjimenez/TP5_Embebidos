@@ -1,5 +1,5 @@
 SRC_DIR = ./src
-INC_DIR = ./inc
+INC_DIR = ./src/inc
 OUT_DIR = ./build
 OBJ_DIR = $(OUT_DIR)/obj
 BIN_DIR = $(OUT_DIR)/bin
