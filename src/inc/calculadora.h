@@ -2,12 +2,12 @@
 #include <stdbool.h>
 
 
-typedef struct calculadora_s * calculadora_t:
+typedef struct calculadora_s * calculadora_t;
 
-typedef int(*funcion_t)(int, int):
+typedef int(*funcion_t)(int, int);
 
-calculadora_t CrearCalculadora(void):
+calculadora_t CrearCalculadora(void);
 
-bool AgregarOperacion(calculadora_t calculadora, char operador, funcion_t funcion):
+bool AgregarOperacion(calculadora_t calculadora, char operador, funcion_t funcion);
 
-int Calcular(calculadora_t calculadora, char * cadena):
+int Calcular(calculadora_t calculadora, char * cadena);
