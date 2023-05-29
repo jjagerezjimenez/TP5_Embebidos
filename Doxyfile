@@ -170,7 +170,7 @@ FULL_PATH_NAMES        = YES
 # will be relative from the directory where doxygen is started.
 # This tag requires that the tag FULL_PATH_NAMES is set to YES.
 
-STRIP_FROM_PATH        = ./src ./inc                                                #Debo modificar INC?
+STRIP_FROM_PATH        = ./src                                               #Debo modificar INC?
 
 # The STRIP_FROM_INC_PATH tag can be used to strip a user-defined part of the
 # path mentioned in the documentation of a class, which tells the reader which
@@ -865,7 +865,7 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  =    ./src \
-                            ./inc \         #Debo modificar INC?
+                                    #Debo modificar INC?
                             
                             
 
