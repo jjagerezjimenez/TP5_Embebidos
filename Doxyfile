@@ -158,7 +158,7 @@ INLINE_INHERITED_MEMB  = NO
 # shortest path that makes the file name unique will be used
 # The default value is: YES.
 
-FULL_PATH_NAMES        = YES
+FULL_PATH_NAMES        = NO
 
 # The STRIP_FROM_PATH tag can be used to strip a user-defined part of the path.
 # Stripping is only done if one of the specified strings matches the left-hand
@@ -170,7 +170,7 @@ FULL_PATH_NAMES        = YES
 # will be relative from the directory where doxygen is started.
 # This tag requires that the tag FULL_PATH_NAMES is set to YES.
 
-STRIP_FROM_PATH        = ./src                                               #Debo modificar INC?
+STRIP_FROM_PATH        = ./src                                         #Debo modificar INC?
 
 # The STRIP_FROM_INC_PATH tag can be used to strip a user-defined part of the
 # path mentioned in the documentation of a class, which tells the reader which
@@ -179,7 +179,7 @@ STRIP_FROM_PATH        = ./src                                               #De
 # specify the list of include paths that are normally passed to the compiler
 # using the -I flag.
 
-STRIP_FROM_INC_PATH    =
+STRIP_FROM_INC_PATH    = inc/
 
 # If the SHORT_NAMES tag is set to YES, doxygen will generate much shorter (but
 # less readable) file names. This can be useful is your file systems doesn't
@@ -946,7 +946,7 @@ FILE_PATTERNS          = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
-RECURSIVE              = NO
+RECURSIVE              = YES
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
