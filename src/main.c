@@ -22,7 +22,21 @@ int main(void){
     AgregarOperacion(calculadora, '-', resta);
     AgregarOperacion(calculadora, '*', producto);
 
+    //suma
+
     resultado = Calcular(calculadora, "2+13");
+
+    printf("Resultado %i\r\n", resultado);
+
+    //resta
+
+    resultado = Calcular(calculadora, "20-15");
+
+    printf("Resultado %i\r\n", resultado);
+
+    //multiplicacion
+
+    resultado = Calcular(calculadora, "6*2");
 
     printf("Resultado %i\r\n", resultado);
     
