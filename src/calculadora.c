@@ -25,7 +25,7 @@ struct calculadora_s {
 operacion_t BuscarOperacion(calculadora_t calculadora, char operador){
     operacion_t result = NULL;
 	
-    for (operacion_t actual = calculadora -> operaciones; actual -> siguiente != NULL; actual = actual -> siguiente) {					//nota: si esto esta vacio no anda, 26:20 / ver 2do arg si es actual
+    for (operacion_t actual = calculadora -> operaciones; actual != NULL; actual = actual -> siguiente) {					//nota: si esto esta vacio no anda, 26:20 / ver 2do arg si es actual
         if (actual -> operador == operador) {
             result = actual;
             break;
@@ -35,7 +35,7 @@ operacion_t BuscarOperacion(calculadora_t calculadora, char operador){
 }
 
 calculadora_t CrearCalculadora(void){
-    calculadora_t result = malloc(sizeof(struct calculadora_s));
+    calculadora_t result = malloc(sizeof(struct calculadora_s));			//calculadora?
     if (result) {															// != NULL?
         memset (result, 0, sizeof(struct calculadora_s));
     }
@@ -61,7 +61,7 @@ int Calcular(calculadora_t calculadora, char * cadena){
 	char operador;
 	int result = 0;
 
-	for(int indice =0; indice < strlen(cadena); indice++){
+	for(int indice = 0; indice < strlen(cadena); indice++){
 		if(cadena[indice] < '0'){
 			operador = cadena[indice];
 			a = atoi(cadena);
