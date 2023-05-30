@@ -9,19 +9,42 @@
 
 
 
-
+/**
+ * @brief Estructura de datos para representar una operación.
+ *
+ * Esta estructura contiene un operador, una función correspondiente a la operación
+ * y un puntero a la siguiente operación en la lista enlazada.
+ */
 typedef struct operacion_s * operacion_t;
 
-struct operacion_s{
-    char operador;
-    funcion_t funcion;
-    operacion_t siguiente;
-};				//correccion
+/**
+ * @brief Estructura de datos para representar una operación.
+ *
+ * Esta estructura contiene información sobre una operación matemática, incluido el operador,
+ * la función correspondiente a la operación y un puntero a la siguiente operación en la lista enlazada.
+ */
+struct operacion_s {
+    char operador; /**< El operador de la operación. */
+    funcion_t funcion; /**< Puntero a la función que realiza la operación. */
+    operacion_t siguiente; /**< Puntero a la siguiente operación en la lista enlazada. */
+};
 
+/**
+ * @brief Estructura de datos para representar una calculadora.
+ *
+ * Esta estructura contiene un puntero a la lista de operaciones disponibles.
+ */
 struct calculadora_s {
     operacion_t operaciones;
 };
 
+/**
+ * @brief Función que busca una operación en la calculadora.
+ *
+ * @param calculadora La calculadora en la que se buscará la operación.
+ * @param operador El operador de la operación buscada.
+ * @return Puntero a la operación encontrada o NULL si no se encuentra.
+ */
 operacion_t BuscarOperacion(calculadora_t calculadora, char operador){
     operacion_t result = NULL;
 	if (calculadora != NULL){
@@ -36,6 +59,11 @@ operacion_t BuscarOperacion(calculadora_t calculadora, char operador){
     return result;
 }
 
+/**
+ * @brief Función que crea una nueva instancia de calculadora.
+ *
+ * @return Puntero a la nueva instancia de calculadora creada o NULL si ocurre un error.
+ */
 calculadora_t CrearCalculadora(void){
     calculadora_t result = malloc(sizeof(struct calculadora_s));			//calculadora?
     if (result) {															// != NULL?
@@ -44,6 +72,14 @@ calculadora_t CrearCalculadora(void){
     return result;
 }
 
+/**
+ * @brief Función que agrega una nueva operación a la calculadora.
+ *
+ * @param calculadora La calculadora a la que se agregará la operación.
+ * @param operador El operador de la nueva operación.
+ * @param funcion La función correspondiente a la operación.
+ * @return true si se agrega la operación correctamente, false si ocurre un error o si la operación ya existe.
+ */
 bool AgregarOperacion(calculadora_t calculadora, char operador, funcion_t funcion){
     
     //operacion_t operacion = BuscarOperacion(calculadora, '\0');
@@ -58,6 +94,13 @@ bool AgregarOperacion(calculadora_t calculadora, char operador, funcion_t funcio
 	return (operacion !=NULL);
 }
 
+/**
+ * @brief Función que realiza un cálculo utilizando la calculadora.
+ *
+ * @param calculadora La calculadora utilizada para el cálculo.
+ * @param cadena La cadena que contiene la expresión a calcular.
+ * @return El resultado del cálculo.
+ */
 int Calcular(calculadora_t calculadora, char * cadena){
 	int a, b;
 	char operador;
