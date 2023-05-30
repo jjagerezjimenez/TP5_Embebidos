@@ -24,11 +24,13 @@ struct calculadora_s {
 
 operacion_t BuscarOperacion(calculadora_t calculadora, char operador){
     operacion_t result = NULL;
-	
-    for (operacion_t actual = calculadora -> operaciones; actual != NULL; actual = actual -> siguiente) {					//nota: si esto esta vacio no anda, 26:20 / ver 2do arg si es actual
+	if (calculadora != NULL){
+		for (operacion_t actual = calculadora -> operaciones; actual != NULL; actual = actual -> siguiente) {					
         if (actual -> operador == operador) {
             result = actual;
             break;
+		}
+    
         }
     }
     return result;
